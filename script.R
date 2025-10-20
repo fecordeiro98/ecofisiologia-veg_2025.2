@@ -1,7 +1,8 @@
 #' Script para a prática de estiolação
 #' Ecofisiologia vegetal
 #' Felipe Cordeiro, Felipe Fernandes, Ivone Nascimento, Jaderson Coriolano, Joyce Micaely, Juliana Fonseca, Letícia Gonçalves
-#' Versão 4
+#' Script 4
+#' R 4.5.1
 
 # Início ------------------------------------------------------------------
 
@@ -10,26 +11,20 @@ library(ggplot2)
 library(dplyr)
 
 ## Importação dos dados ####
-dados <- read.csv('./dados.csv', T, ',', dec = '.')
+dados <- read.csv('./dados.csv', header = T, sep = ',', dec = '.')
 
 ### Configuração dos dados ####
 dados <- dados |> mutate(
   Bloco = factor(Bloco),
-  Tratamento = factor(Tratamento),
-  across(
-    .cols = where(is.numeric),
-    .fns = ~ ifelse(is.na(.), 0, .)
-  )
+  Tratamento = factor(Tratamento)
 )
 
 #### Conferência ####
 str(dados)
 
 ## Separação ####
-luz <- dados |> 
-  filter(Tratamento == 'Luz')
-sombra <- dados |> 
-  filter(Tratamento == 'Sombra')
+luz <- dados |> filter(Tratamento == 'Luz')
+sombra <- dados |> filter(Tratamento == 'Sombra')
 
 # Gráficos ----------------------------------------------------------------
 

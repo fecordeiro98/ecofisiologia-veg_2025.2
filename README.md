@@ -21,7 +21,6 @@ Nesta primeira parte, o ambiente de análise é preparado.
   - `read.csv()`: Importa os dados de um arquivo chamado `dados.csv`.
   - `mutate()`: Realiza modificações no conjunto de dados:
     - As colunas `Bloco` e `Tratamento` são convertidas para o tipo `factor`, que é ideal para variáveis categóricas em análises estatísticas.
-    - `across()`: Uma função é aplicada a todas as colunas numéricas para substituir valores ausentes (`NA`) por `0`.
   - `str(dados)`: Exibe a estrutura do data frame para conferência dos tipos de dados.
 
 - **Separação dos Dados:**

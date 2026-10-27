@@ -11,7 +11,7 @@ library(ggplot2)
 library(dplyr)
 
 ## Importacao dos dados ----
-dados <- read.csv('./dados.csv', header = T, sep = ',', dec = '.')
+dados <- read.csv('dados.csv', header = T, sep = ',', dec = '.')
 
 ### Configuracao dos dados ----
 dados <- dados |> mutate(
